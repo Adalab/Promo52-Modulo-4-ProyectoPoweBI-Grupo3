@@ -108,7 +108,7 @@ Analizar patrones de éxito en la industria cinematográfica mediante el estudio
 - **Análisis talento**:
   - Top 4 de los géneros más populares y sus valoraciones medias.
     
-### 5. Dashboard de Conclusiones 🏆
+### 7. Dashboard de Conclusiones 🏆
 - Insights clave.
 - Desvelamineto de la película elaborada.
 
