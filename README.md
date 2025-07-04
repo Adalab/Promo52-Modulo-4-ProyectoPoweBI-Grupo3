@@ -16,38 +16,38 @@ Analizar patrones de éxito en la industria cinematográfica mediante el estudio
 ### Fuente de Datos
 - **Origen**: Rotten Tomatoes Movies Dataset
 - **Registros iniciales**: 17,712 películas
-- **Registros finales**: 14,156 películas (después de limpieza)
+- **Registros finales**: 14.560 películas (después de limpieza)
 
 ### Columnas del Dataset
-- **Titulo pelicula**: Nombre de la película
+- **Título pelicula**: Nombre de la película
 - **Sinopsis**: Descripción de la película
-- **Clasificacion edad**: Rating de edad (G, PG, PG-13, R, NR)
-- **Generos**: Género principal de la película
+- **Clasificación edad**: Rating de edad (G, PG, PG-13, R, NR)
+- **Géneros**: Género principal de la película
 - **Directores**: Director principal
 - **Guionistas**: Guionista principal
 - **Actores**: Dos actores principales
 - **Fecha estreno original**: Fecha de estreno inicial
 - **Fecha estreno streaming**: Fecha de estreno en streaming
-- **Duracion**: Duración en minutos
+- **Duración**: Duración en minutos
 - **Productora**: Casa productora
 - **Estado**: Estado en Rotten Tomatoes (Fresh, Rotten, Certified-Fresh)
-- **Valoracion criticos**: Puntuación de críticos (0-100)
-- **Numero criticas**: Número de reseñas de críticos
-- **Valoracion audiencia**: Puntuación de audiencia (0-100)
-- **Numero valoraciones audiencia**: Número de valoraciones de audiencia
+- **Valoración criticos**: Puntuación de críticos (0-100)
+- **Número críticas**: Número de reseñas de críticos
+- **Valoración audiencia**: Puntuación de audiencia (0-100)
+- **Número valoraciones audiencia**: Número de valoraciones de audiencia
 
 ## 🔧 Proceso de Limpieza de Datos
 
 ### Transformaciones Realizadas
 
-1. **Traducción de columnas** al español para mejor comprensión
+1. **Traducción de columnas** al español para mejorar la comprensión
 2. **Eliminación de columnas irrelevantes**:
    - `rotten_tomatoes_link`
-   - `Consenso criticos` (48% valores nulos)
+   - `Consenso críticos` (48% valores nulos)
    - `Estado audiencia`
-   - `Numero top criticos`
-   - `Numero criticas favorables`
-   - `Numero criticas negativas`
+   - `Número top criticos`
+   - `Número criticas favorables`
+   - `Número criticas negativas`
 
 3. **Limpieza de valores nulos**: Eliminación de filas con datos faltantes
 4. **Simplificación de campos múltiples**:
@@ -67,8 +67,8 @@ Analizar patrones de éxito en la industria cinematográfica mediante el estudio
 - Fecha estreno streaming: 2.17%
 - Actores: 1.99%
 - Sinopsis: 1.81%
-- Duracion: 1.77%
-- Valoracion audiencia: 1.67%
+- Duración: 1.77%
+- Valoración audiencia: 1.67%
 
 ## 📈 Estructura de Dashboards
 
@@ -76,39 +76,41 @@ Analizar patrones de éxito en la industria cinematográfica mediante el estudio
 - **KPIs principales**: 
   - Número total de películas
   - Géneros únicos
+  - Número de productoras
+  - Duración media de las películas
   - Valoración promedio crítica
   - Valoración promedio audiencia
-  - Total de críticas y valoraciones
 - **Visualizaciones**:
-  - Distribución por género
+  - Distribución de las películas por género
   - Análisis por clasificación de edad
 
 ### 2. Dashboard de Evolución Temporal ⏰
 - **Análisis cronológico**:
-  - Número de estrenos por año
-  - Evolución de géneros a lo largo del tiempo
-  - Tendencias en duración de películas
-  - Patrones estacionales de lanzamientos
+  - Número de estrenos por año.
+  - Evolución de géneros a lo largo del tiempo.
 
-### 3. Dashboard de Participantes 🎭
-- **Análisis de talento**:
-  - Ranking de actores más frecuentes
-  - Directores destacados por puntuaciones
-  - Análisis de géneros preferidos
-  - Comparación crítica vs. audiencia
-  - Identificación de películas con mayor discrepancia de valoraciones
+### 3. Dashboard de Películas 🎭
+- **Análisis de valoraciones**:
+  - Comparación valoración críticos vs. audiencia.
+  - Identificación de películas mejor valoradas de las 4 etapas cinematográficas.
 
 ### 4. Dashboard de Productoras 🏢
 - **Análisis empresarial**:
-  - Ubicación geográfica de productoras
-  - Tiempo entre producción y estreno
-  - Selección de actores por productora
-  - Especialización por tipo de película
+  - Evolución de las productoras con mayor número de películas y valoraciones promedio obtenidas a lo largo de la historia.
+  - Ubicación geográfica de las productoras principales.
 
+### 5. Dashboard de Artistas 🏢
+- **Análisis talento**:
+  - Ranking de los directores y guionistas mejor valorados a lo largo de la historia.
+  - Top 3 de actores en la epoca actual según su popularidad y según las valoraciones obtenidas.
+ 
+### 6. Dashboard de Géneros 🎭
+- **Análisis talento**:
+  - Top 4 de los géneros más populares y sus valoraciones medias.
+    
 ### 5. Dashboard de Conclusiones 🏆
-- Rankings finales
-- Insights clave
-- Recomendaciones estratégicas
+- Insights clave.
+- Desvelamineto de la película elaborada.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -118,85 +120,14 @@ Analizar patrones de éxito en la industria cinematográfica mediante el estudio
 - **Jupyter Notebook**: Desarrollo y documentación
 - **Power BI**: Visualización de datos (dashboards)
 
-## 📁 Archivos del Proyecto
-
-```
-output/evaluacion_bi/
-├── analisis_limpieza.ipynb              # Notebook principal de análisis
-├── dashboard.txt                        # Especificaciones de dashboards
-├── storytelling.txt                     # Contexto del proyecto
-├── rotten_tomatoes_movies_limpio.csv    # Dataset procesado
-├── directores.csv                       # Lista única de directores
-└── README.md                           # Este archivo
-```
-
-## 🚀 Cómo Ejecutar el Análisis
-
-### Prerrequisitos
-```bash
-pip install pandas numpy jupyter
-```
-
-### Pasos
-1. **Abrir el notebook principal**:
-   ```bash
-   jupyter notebook analisis_limpieza.ipynb
-   ```
-2. **Ejecutar las celdas secuencialmente** para reproducir el análisis
-3. **Importar `rotten_tomatoes_movies_limpio.csv`** en Power BI para crear dashboards
-
-## 📊 Insights Preliminares
-
-### Estadísticas Generales del Dataset Limpio
-- **Total de películas analizadas**: 14,156
-- **Duración promedio**: 102.2 minutos
-- **Valoración críticos promedio**: 60.9/100
-- **Valoración audiencia promedio**: 60.6/100
-- **Rango temporal**: 1930 - presente
-
-### Top Rankings
-- **Director más prolífico**: Clint Eastwood (38 películas)
-- **Guionista más activo**: Woody Allen (33 películas)
-- **Clasificación más común**: R (6,377 películas - 36%)
-- **Género predominante**: Drama (1,887 películas)
-- **Productora líder**: Paramount Pictures (517 películas)
-
-### Patrones Identificados
-- **Correlación crítica-audiencia**: Las valoraciones muestran una correlación moderada
-- **Variabilidad alta**: Ambas métricas cubren el rango completo (0-100)
-- **Distribución por estado**: 
-  - Rotten: ~43%
-  - Fresh: ~35%
-  - Certified-Fresh: ~22%
-
-## 🎯 Próximos Pasos del Análisis
-
-### Fase 2: Dashboards Interactivos
-1. **Implementación en Power BI** de los 5 dashboards definidos
-2. **Filtros interactivos** por año, género, productora
-3. **Análisis comparativo** entre críticas y audiencia
-
-### Fase 3: Análisis Avanzado
-1. **Análisis predictivo** para identificar factores de éxito
-2. **Segmentación de audiencias** por preferencias
-3. **Análisis de tendencias temporales** detallado
-4. **Correlaciones entre variables** (duración vs. valoración, etc.)
-
-### Fase 4: Recomendaciones Estratégicas
-1. **Perfil de película ideal** según datos históricos
-2. **Estrategias de timing** para lanzamientos
-3. **Identificación de nichos** de mercado
-4. **Optimización de presupuestos** basada en ROI histórico
-
 ## 👥 Equipo de Trabajo
 
-| Responsable | Dashboard | Enfoque Principal |
-|-------------|-----------|-------------------|
-| **Laura** | Introducción | KPIs generales y distribuciones básicas |
-| **Auris** | Evolución Temporal | Tendencias históricas y patrones estacionales |
-| **Lara** | Participantes | Análisis de talento y preferencias de audiencia |
-| **Lucía** | Productoras | Estrategias empresariales y geografía |
-
+| Responsable | Dashboard |
+|-------------|-----------|
+| **Laura** | Introducción y análisis general |
+| **Lara**  | Evolución temporal y análisis de las valoraciones | 
+| **Lucía** | Análisis de las productoras |
+| **Auris** | Análisis de talento y preferencias de audiencia |
 
 ## 🎬 Reflexión Final
 
@@ -205,10 +136,3 @@ pip install pandas numpy jupyter
 Este análisis representa el primer paso en nuestro viaje para crear una película que no solo entretenga, sino que también deje una marca indeleble en la historia del cine. Los datos son nuestro mapa, pero la creatividad sigue siendo nuestro destino.
 
 **CineLab Studios** - *Donde los datos encuentran la creatividad*
-
-## 📞 Contacto
-
-Para consultas sobre este análisis o colaboraciones futuras:
-- **Proyecto**: Análisis Cinematográfico
-- **Equipo**: CineLab Studios Data Analytics Team
-- **Ubicación**: `output/evaluacion_bi/`
